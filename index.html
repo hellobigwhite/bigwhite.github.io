@@ -1,113 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web</title>
+    <title>Document</title>
+    <style>
+        /* 基础选择器 */
+        /* 标签选择器：写上标签 */
+        h3 {
+            color: red;
+        }
+
+        table {
+            color: green;
+        }
+
+        /* 类选择器口诀：样式点定义 结构类（class）调用 一个或多个 开发最常用 */
+        .pink {
+            color: pink;
+        }
+
+        /* id选择器的口诀：样式#定义，结构id调用，只能调用一次，别人切勿使用 */
+        /* 实际操作中别人可以使用，暂时不什么原因 */
+        #yellow {
+            color: yellow;
+        }
+
+        /* 通配符选择器：把HTML body div span li 等等的标签都改为蓝色 */
+        /* 在css中，通配符选择器使用“*”定义，表示选取页面中所有元素（标签） */
+        /* 不需要调用，自动就给所用的元素使用样式 */
+        /* * {
+            color: blue;
+        } */
+        /* css使用font-family属性定义文本的字体系列 
+        font-size属性定义字体大小  px像素 
+        
+        若定义body整个文字大小，其中的标题标签比较特殊 需要单独指定文字大小*/
+        /* 使用font-weight属性设置文本 字体的粗细*/
+
+        p {
+            font-family: "微软雅黑";
+        }
+
+        h4 {
+            font-family: "Microsoft YaHei"
+        }
+
+        body {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        /* font-style属性设置文本的方格
+        normal 作用 默认值 浏览器会显示标准的字体样式 font-style:normal;
+        italic 作用 浏览器会显示斜体的字体样式
+        平时很少给文字加斜体 反而要给斜体标签（em,i)改为不倾斜字体 */
+        p {
+            font-style: italic;
+        }
+
+        /* font 复合属性写法 简写方式  节约代码
+        font font-style font-weight font-size/line-height font-family;*/
+        /* 使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性间以空格隔开 
+        不需要设置的属性可以省略，但必须保留font-size和font-family属性，否者font属性将不起作用
+        */
+
+        div {
+            /* font-style: italic;
+            font-weight: 700;
+            font-size:19px;
+            font-family: 'Microsoft YaHei'; */
+            font: italic 700 19px 'Microsoft YaHei';
+        }
+
+        .one {
+            text-align: center;
+            width: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    下一级文件：<br/>
-   
-    <p>
-        <font face="仿宋">
-            HashSet是Java中常用的Set集合，向HashSet集合中添加数据对象时，首先会调用对象的hashCode()方法获取哈希码，根据哈希码计算对象的存储位置，如果相应位置上已经有数据对象，则会调用对象的equals()方法判断新加入的对象与现有对象是否重复，如果重复则拒绝加入。为了使用HashSet集合正确存储自定义类的对象，自定义类需要重写equals()方法和hashCode()方法。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋">
-            编写程序完成以下功能：定义一个学生类Student，属性包括String类型的id、name和int类型的age（id属性字符串内容相同的则认为是同一个学生），为三个属性定义get和set方法。重写equals()方法和hashCode()方法，使得当使用HashSet存储Student类的对象时，id重复的学生对象不能重复添加到集合。输入4个学生类对象的属性值，创建4个Student类对象，将其添加到一个HashSet&lt;Student&gt;集合，遍历集合，输出集合中各个学生的信息。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋"><br /></font>
-    </p>
-    <p>输入说明：输入4个Student类对象的属性值，每个对象属性值按一行输入，以空格分割。</p>
-    <p><br /></p>
-    <p>输出说明：集合中存储的Student类对象的信息，每个对象信息占一行，输出格式为 id:name:age。</p>
-    <p><br /></p>
-    <p>输入样例1：<br />2022001 Tom 19<br />2022002 Jerry 18<br />2022003 Eason 20<br />2022002 Jerry 18<br />输入样例2：<br />2022001
-        Tom 19<br />2022002 Jerry 18<br />2022003 Eason 20<br />2022004 Jerry 18</p>
-    <p>输出样例1：<br />2022001:Tom:19岁<br />2022002:Jerry:18岁<br />2022003:Eason:20岁<br />输出样例2：<br />2022001:Tom:19岁<br />2022002:Jerry:18岁<br />2022003:Eason:20岁<br />2022004:Jerry:18岁
-    </p>
+    <!-- 表格属性要写到标签table里面 -->
+    <table align="center" border="1" cellpadding="20" cellspacing="0" width="500" height="500">
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>刘德华</td>
+            <td>男</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>张学友</td>
+            <td>男</td>
+            <td>58</td>
+        </tr>
+        <tr>
+            <td>郭富城</td>
+            <td>男</td>
+            <td>51</td>
+        </tr>
+    </table>
+    <!-- class后可加多类名 中间用空格隔开 -->
+    <ul class="pink">
+        <li>罗峰</li>
+        <li>洪</li>
+        <li>雷神</li>
+    </ul>
+    <ol id="yellow">
+        <li>钻山锥</li>
+        <li>弧刀盘</li>
 
+    </ol>
+    <dl>
+        <dt>吞噬星空</dt>
+        <dd>徐欣</dd>
+        <dd>罗平</dd>
+        <dd>罗海</dd>
+    </dl>
+    <form>
+        <!-- text 文本框 用户可以在里面输入任何文本文字 -->
+        用户名：<input type="text" name="username" value="请输入用户名" maxlength="6"><br>
+        <!-- password 密码框 用户看不见输入的密码 -->
+        密&nbsp;&nbsp;码：<input type="password" name="pwd"><br>
+        <!-- radio 单选按钮 可以实现多选一 -->
+        <!-- name 是表单元素名字 这里性别单选按钮必须有相同的名字name才可以实现多选一 -->
+        <!-- 单选按钮和复选框可以设置checked属性，当页面打开的时候就可以默认选中这个按钮 -->
+        <!-- 性别：男 <input type="radio" name="sex"> 女 <input type="radio" name="sex" checked="checked"> 人妖 <input type="radio" name="sex"><br> -->
+        <!-- checkbox  复选框 可以实现多 -->
+        爱好：吃饭<input type="checkbox" name="hobby" vlaue="吃饭">睡觉<input type="checkbox" name="hobby">打豆豆<input
+            type="checkbox" name="hobby" checked="checked">
+        <br>
+        <!-- 点击提交按钮，可以把表单域form里面的的表单元素里面的值提交给后台服务器 -->
+        <!-- <input type="submit"value="免费注册"> -->
+        <!-- 重置按钮可以还原表单元素初始的默认状态 -->
+        <input type="reset" value="重新填写">
+        <br>
+        <!-- 普通按钮button 后期结合js搭配使用 -->
+        <input type="button" value="获取短信验证码"><br>
+        <!-- 文件域 file 用于上传文件 -->
+        上传头像：<input type="file">
+    </form>
+    <label for="text">用户名：</label><input type="text" id="text">
+    <!-- <input type="radio"id="nan"><label for="nan">男</label> -->
+    <!-- <input type="radio"id="nv"><label for="nv">女</label> -->
+    <br>
+    籍贯：<select name="籍贯">
+        <option value="地球">地球</option>
+        <option value="火星" selected="selected">火星</option>
+        <option value="金星">金星</option>
+        <option value="木星">木星</option>
+    </select>
+    <br>
+    今日反馈：
+    <textarea name="今日反馈" id="text" cols="30" rows="10"></textarea>
 
-    <p>
-        <font face="仿宋">
-            比较两个相同进制（2进制~16进制)的数值大小。从键盘上输入两个正确（数码符合当前进制）的相同进制的数值字符串（不带正负号，可以有小数点），比较大小，输出“大于”、“小于”或者“等于”。注意：设计的算法与具体的进制无关。
-        </font>
-    </p>
-    <p><br /></p>
-    <p>输入说明：在两行分别输入一个数值字符串</p>
-    <p><br /></p>
-    <p>输出说明：比较结果</p>
-    <p><br /></p>
-    <p>输入样例1：123 <br /> 1234<br />输入样例2：12345<br /> abcd</p>
-    <p><br /></p>
-    <p>输出样例1：小于<br />输出样例2：大于</p>
-
-    10:08:11
-    <p>
-        <font face="仿宋">
-            从键盘上输入一个数值字符串（表示非负整数，所以该字符串不带正负号和小数点），输出这个字符串中的数字字符重新组合的最小数。例如“654321”输出的为“123456”；“001254”输出为“100245”；“00000”输出为“0”。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋"><br /></font>
-    </p>
-    <p>输入说明：数字字符串S</p>
-    <p><br /></p>
-    <p>输出说明：最小数字</p>
-    <p><br /></p>
-    <p>输入样例1：654321<br />输入样例2：23087914</p>
-    <p><br /></p>
-    <p>输出样例1：123456<br />输出样例2：10234789</p>
-    
-    10:08:24
-    <p>
-        <font face="仿宋">皖北流行一种叫做“干瞪眼”的扑克牌游戏，使用的扑克牌牌面数值包括：A(1),2,3,4,5,6,7,8,9,T(10),J(11),Q(12),K(13)。这里10用T替换，暂时不考虑大鬼和小鬼。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋">两手牌的大小规则如下（暂不考虑其他规则）：</font>
-    </p>
-    <p>
-        <font face="仿宋">a)单牌：只有两张牌刚好大一个点时才能进行比较，比较顺序为：A&gt;K&gt;Q&gt;J&gt;T&gt;9&gt;8&gt;7&gt;6&gt;5&gt;4&gt;3。</font>
-    </p>
-    <p>
-        <font face="仿宋">比如：6大于5，但是不比4大，6和4不能比较。单牌2属于特殊牌，可以和其他所有普通单牌比较，并且是最大的。</font>
-    </p>
-    <p>
-        <font face="仿宋">b) 对子：即两张牌的点数相同，规则和单牌相似，两个2是特殊对子，可以大于所有的其他对子。注意：对子和单牌不能进行比较。</font>
-    </p>
-    <p>
-        <font face="仿宋">c)
-            炸弹：3个点数相同的牌。炸弹可以大于任何单张和对子，炸弹之间的比较与单牌和对子不同，只要满足：222&gt;AAA&gt;KKK&gt;QQQ&gt;JJJ&gt;TTT&gt;…&gt;333的规则的即可。即222是最大的，AAA可以大于KKK，也可以大于333。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋">编写一个方法实现两手牌的比较：</font>
-    </p>
-    <p>
-        <font face="仿宋">int compareCards (String firstCards, String secondCards)</font>
-    </p>
-    <p>
-        <font face="仿宋">参数：firstCards是需要比较的第一手牌，secondCards是需要比较的第二手牌</font>
-    </p>
-    <p>
-        <font face="仿宋">
-            返回：int型数据，如果firstCards和secondCards一样大，返回0；如果firstCards大于secondCards，返回1；如果firstCards小于secondCards，返回-1；如果firstCards和secondCards无法比较，返回2。
-        </font>
-    </p>
-    <p>
-        <font face="仿宋"><br /></font>
-    </p>
-    <p>输入说明：要比较的两手牌，中间以空格隔开。每一手牌可能是任何大小的单牌、对子或炸弹。不符合规则的输入情况不需考虑。</p>
-    <p><br /></p>
-    <p>输出说明：两手牌的比较结果</p>
-    <p><br /></p>
-    <p>输入时两手牌之间用空格隔开。<br />输入样例1：J T<br />输入样例2：J 8</p>
-    <p><br /></p>
-    <p>输出样例1：1<br />输出样例2：2</p>
-
+    <h3>青春不常在 抓紧谈恋爱</h3>
+    <br>
+    <table>
+        <!-- 第一行 -->
+        <tr>
+            <td>性别：</td>
+            <td>
+                <input type="radio" name="sex" id="nan"><label for="nan">男</label>
+                <input type="radio" name="sex" id="nv"><label for="nv">女</label>
+            </td>
+        </tr>
+        <!-- 第二行 -->
+        <tr>
+            <td>生日：</td>
+            <td>
+                <select name="生日" id="" value="请选择年">
+                    <option value="">--请选择年份--</option>
+                    <option value="">2000</option>
+                    <option value="">2001</option>
+                    <option value="">2002</option>
+                    <option value="">2003</option>
+                    <option value="">2004</option>
+                    <option value="">2005</option>
+                    <option value="">2006</option>
+                    <option value="">2007</option>
+                    <option value="">2008</option>
+                    <option value="">2009</option>
+                    <option value="">2010</option>
+                    <option value="">2011</option>
+                    <option value="">2012</option>
+                    <option value="">2013</option>
+                    <option value="">2014</option>
+                    <option value="">2015</option>
+                    <option value="">2016</option>
+                    <option value="">2017</option>
+                    <option value="">2018</option>
+                    <option value="">2019</option>
+                </select>
+                <select name="生日" id="">
+                    <option value="">--请选择月份--</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                </select>
+                <select name="生日" id="">
+                    <option value="">--请选择日期--</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                </select>
+            </td>
+        </tr>
+        <!-- 第三行 -->、
+        <tr>
+            <td>所在地：</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <!-- 第四行 -->
+        <tr>
+            <td>婚姻状况：</td>
+            <td>
+                <input type="radio" name="hunyin" id="no" checked="checked"><label for="no">未婚</label>
+                <input type="radio" name="hunyin" id="yes"><label for="yes">已婚</label>
+                <input type="radio" name="hunyin" id="yesno"><label for="yesno">离婚</label>
+            </td>
+        </tr>
+        <!-- 第五行 -->
+        <tr>
+            <td id="yellow">学历：</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <!-- 第六行 -->
+        <tr>
+            <td>喜欢的类型：</td>
+            <td>
+                <input type="checkbox">妩媚的
+                <input type="checkbox">可爱的
+                <input type="checkbox">小鲜肉
+                <input type="checkbox">老腊肉
+                <input type="checkbox">都喜欢
+            </td>
+        </tr>
+        <!-- 第七行 -->
+        <tr>
+            <td>自我介绍：</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <!-- 第八行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="免费注册">
+            </td>
+        </tr>
+        <!-- 第九行 -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox" checked="checked">我同意注册条款和会员加入标准
+            </td>
+        </tr>
+        <!-- 第十行 -->
+        <tr>
+            <td></td>
+            <td><a href="#">我是会员，立即登录</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h2>我承诺</h2>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <ul>
+                    <li>年满18岁，单身</li>
+                    <li>抱着严肃的态度</li>
+                    <li>真诚的寻找另一半</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <p>微软雅黑；吗咿呀嘿</p>
+    <h1>微软雅黑；吗咿呀嘿</h1>
+    <div>三生三世十里桃花，一心一意百行代码</div>
 </body>
+
 </html>
